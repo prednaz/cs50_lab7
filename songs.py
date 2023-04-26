@@ -29,7 +29,7 @@ with open("songs.csv", newline='') as f:
         in csv.DictReader(f)
     )
 
-fix_width = lambda text: (str(text).ljust(9))[:9]
+fix_width = lambda text: (str(text).ljust(10))[:10]
 
 def print_table(table):
     print(*(fix_width(t) for t in table[0]))
