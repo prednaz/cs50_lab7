@@ -8,10 +8,10 @@ adjust = lambda function, key: lambda dictionary: {
     k: function(v) if k == key else v for (k, v) in dictionary.items()
 }
 
-with open("artists.csv", newline='') as f:
+with open("artists.csv", newline="") as f:
     artists = tuple(adjust(int, "id")(artist) for artist in csv.DictReader(f))
 
-with open("songs.csv", newline='') as f:
+with open("songs.csv", newline="") as f:
     songs = tuple(
         compose(
             adjust(int, "duration_ms"),
